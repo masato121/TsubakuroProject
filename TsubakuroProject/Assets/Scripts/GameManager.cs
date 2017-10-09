@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour {
 
 	public bool ClearFlag;
-	public GameObject flyingtsubame;
-	public GameObject tsubame;
+	public GameObject spring_apart;
+	public GameObject winter_apart;
 	public GameObject MiniGame;
 
 	// Use this for initialization
@@ -20,13 +20,13 @@ public class GameManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (ClearFlag == true) {
-			flyingtsubame.active = true;
+			spring_apart.active = true;
 			MiniGame.active = true;
-			tsubame.active = false;
+			winter_apart.active = false;
 		} else {
-			flyingtsubame.active = false;
+			spring_apart.active = false;
 			MiniGame.active = false;
-			tsubame.active = true;
+			winter_apart.active = true;
 		}
 	}
 	public void PushClearButton (){
