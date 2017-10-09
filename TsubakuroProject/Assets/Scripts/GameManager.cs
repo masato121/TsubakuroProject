@@ -35,5 +35,7 @@ public class GameManager : MonoBehaviour {
 	public void PushButtonNoclear(){
 		ClearFlag = false;
 	}
-
+	public void PushButtonNewGame(){
+		SceneManager.LoadScene ("TextScene");
+	}
 }

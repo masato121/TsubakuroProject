@@ -13,7 +13,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Player
   - 
   - 
   - 
@@ -40,4 +40,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Back
+    uniqueID: 2753790823
+    locked: 0
+  - name: Build
+    uniqueID: 3369157827
+    locked: 0
+  - name: Accesary
+    uniqueID: 3947644453
+    locked: 0
+  - name: Player
+    uniqueID: 1428168223
+    locked: 0
+  - name: Objects
+    uniqueID: 1677801403
     locked: 0

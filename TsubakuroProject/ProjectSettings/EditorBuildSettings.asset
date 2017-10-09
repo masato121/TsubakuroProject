@@ -8,3 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TitleScene.unity
     guid: e6625c44e875cab4291bebb253c7ec34
+  - enabled: 1
+    path: Assets/Scenes/TextScene.unity
+    guid: 7baaa4982affe964f9ec991803464547
