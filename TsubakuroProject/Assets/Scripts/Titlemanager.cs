@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Novel;
 
 public class Titlemanager : MonoBehaviour {
 
@@ -46,7 +47,7 @@ public class Titlemanager : MonoBehaviour {
     }
     public void PushButtonNewGame()
     {
-        SceneManager.LoadScene("TextScene");
+        NovelSingleton.StatusManager.callJoker("tall/scene1", "");
     }
 }
 
