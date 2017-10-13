@@ -20,22 +20,30 @@ public class PlayerControlScript : MonoBehaviour {
 
 
 	void Move(){
-
-		Vector2 Position = transform.position;
+        var animator = GetComponent<Animator>();
+        Vector2 Position = transform.position;
 
 		if(Input.GetKey("left")){
+            animator.Play("Tubakuro_hidari");
 
-			Position.x -= SPEED.x;
+            Position.x -= SPEED.x;
 		} else if(Input.GetKey("right")){
-			// 代入したPositionに対して加算減算を行う
-			Position.x += SPEED.x;
+            animator.Play("Tubakuro_migi");
+            // 代入したPositionに対して加算減算を行う
+            Position.x += SPEED.x;
 		} else if(Input.GetKey("up")){
-			// 代入したPositionに対して加算減算を行う
-			Position.y += SPEED.y;
-		} else if(Input.GetKey("down")){ 
-			// 代入したPositionに対して加算減算を行う
-			Position.y -= SPEED.y;
-		}
+            animator.Play("Tubakuro_ushiro");
+            // 代入したPositionに対して加算減算を行う
+            Position.y += SPEED.y;
+		} else if(Input.GetKey("down")){
+            animator.Play("Tubakuro_mae");
+            // 代入したPositionに対して加算減算を行う
+            Position.y -= SPEED.y;
+        }
+        else
+        {
+            animator.Play("Tubakuro_stay");
+        }
 		// 現在の位置に加算減算を行ったPositionを代入する
 		transform.position = Position;
 	}
