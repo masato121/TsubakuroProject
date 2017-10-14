@@ -49,6 +49,10 @@ public class Titlemanager : MonoBehaviour {
     {
         NovelSingleton.StatusManager.callJoker("tall/scene1", "");
     }
+    public void PushButtonContinue()
+    {
+        NovelSingleton.StatusManager.callJoker("tall/libs/save", "*loadstart");
+    }
 }
 
 

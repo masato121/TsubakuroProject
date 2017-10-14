@@ -40,10 +40,7 @@ public class PlayerControlScript : MonoBehaviour {
             // 代入したPositionに対して加算減算を行う
             Position.y -= SPEED.y;
         }
-        else
-        {
-            animator.Play("Tubakuro_stay");
-        }
+        
 		// 現在の位置に加算減算を行ったPositionを代入する
 		transform.position = Position;
 	}
