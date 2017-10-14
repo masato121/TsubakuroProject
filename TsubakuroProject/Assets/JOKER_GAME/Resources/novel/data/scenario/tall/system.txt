@@ -11,8 +11,9 @@
 @button_new name="button_auto" tag="message_button" x=200 y=70 scale=1 sort=5 layer=ui storage="auto" 
 @button_new name="button_log"  tag="message_button" x=200 y=30 scale=1 sort=5 layer=ui storage="log" 
 
-;@image_new name="button_title" tag="message_button" x=6.5 y=-3.25 sort=5 layer=ui storage="title" 
-;@image_new name="button_config" tag="message_button" x=6.5 y=-3.75 sort=5 layer=ui storage="config" 
+
+@button_new name="button_title" tag="message_button" x=200 y=-10 scale=1 sort=5 layer=ui storage="title" 
+;@button_new name="button_config" tag="message_button" x=200 y=-50 scale=1 sort=5 layer=ui storage="config" 
 
 ;_sp_button_close は特別な意味を持つ名前。close 機能が自動的に付与される
 @button_new name="_sp_button_close" tag="message_button" x=121 y=-104 sort=5 scale=0.5 layer=ui storage="close" 
@@ -32,13 +33,13 @@
 	@sleepgame file="tall/libs/save" target="*savestart"
 [elsif exp="{evt.caller_name}==button_load"]
 	@sleepgame file="tall/libs/save" target="*loadstart"
-[elsif exp="{evt.caller_name}==button_auto"]
+;[elsif exp="{evt.caller_name}==button_auto"]
 ;autoの時間はコンフィグなどで設定できる
 	[autostart]
 [elsif exp="{evt.caller_name}==button_skip"]
 	[skipstart]
 [elsif exp="{evt.caller_name}==button_title"]
-	;タイトルへ戻る
+	[scene file="TitleScene"]
 [elsif exp="{evt.caller_name}==button_config"]
 	@sleepgame file="tall/libs/config"
 [elsif exp="{evt.caller_name}==button_log"]
@@ -66,7 +67,7 @@
 	@anim name="button_skip" wait=false time="0.5" x="{tmp.anim_x}" 
 	@anim name="button_auto" wait=false time="0.5" x="{tmp.anim_x}" 
 	@anim name="button_log"  wait=false time="0.5" x="{tmp.anim_x}" 
-
+	@anim name="button_title"wait=false time="0.5" x="{tmp.anim_x}"
 
 [endif]
 
