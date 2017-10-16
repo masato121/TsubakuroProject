@@ -22,16 +22,14 @@
 
 
 [tag_default tag="apart"]
-[bg_new name="winter" storage="winter" scale=5 y=3 sort=1]
-[bg_new name="apart2" storage="apart2" scale=5 y=3 sort=2]
-[bg_new name="apart3" storage="apart3" scale=5 y=3 sort=3]
-[bg_new name="apart4" storage="apart4" scale=5 y=3 sort=3]
-[image_new name="apart5" storage="apart5" scale=2 y=3 layer=character sort=2]
+[image_new name="winter" storage="winter" scale=5 y=3 layer=background sort=1]
+[image_new name="apart1" storage="apart1" scale=5 y=3 layer=background sort=2]
+
 [reset_tag_default]
+[image_new name="apart2" storage="apart2" scale=1.5 y=2.7 layer=character sort=2]
 
-[bg_show tag=apart]
-[image_show tag=apart ]
-
+[image_show tag=apart wait=false]
+[image_show name=apart2]
 
 ;---------------キャラ定義
 
@@ -43,7 +41,7 @@
 
 
 
-@image_pos name="tuba" x=0 y=-0.7
+@image_pos name="tuba" x=0 y=-1
 
 
 @image_show name=tuba
@@ -77,8 +75,9 @@ Prrr![r]
 『うん。そうしなさい。[r][l]
 
 [image_mod name=tuba storage="tsubakuro_migi"]
-[anim tag="apart" time=2 x=-2 y=3]
-[anim name="tuba" time=1 x=1.1 y=-0.6 wait=false]
+[anim tag="apart" time=2 x=-2 y=3 wait=false]
+[anim name="apart2" time=2 x=-2 y=2.7]
+[anim name="tuba" time=1 x=1 y=-1 wait=false]
 
 
 
@@ -127,7 +126,9 @@ Prrr![r]
 ……ったく。心配しすぎなんだよ。[r]今頃どこの大学だって就職率90%越えてるってのに。[p]
 #僕
 よりによって僕が就職できないわけないじゃん。[r]よりによってこの僕が、さ。[p]
-[remove tag=apart]
+[hide tag=apart wait=false]
+[hide name=apart2 wait=false]
+[hide name=tuba]
 
 
 [r]
@@ -135,8 +136,9 @@ Prrr![r]
 [r]
 ――――特に何もないまま三か月の月日が経った[p]
 [bg_new name="ap_before" storage="washitu_before" scale=5 x=2 y=-5]
-[bg_show name=ap_before]
-[chara_pos name=tuba x=0 y=2]
+
+[bg_show name=ap_before wait=false]
+[chara_show name=tuba x=0 y=2]
 #僕
 らーらーらーもうはるだよー。[l]今回は採用かなー？不採用かなー？[l][r]不採用だよー。[l]らららー。[p]
 #僕
@@ -145,9 +147,14 @@ Prrr![r]
 すると特技見せるために不採用にならなくちゃなー。こりゃダメだー。[r][l]あははー。[p]
 #僕
 はあ……。[p]
+[hide name=ap_before wait=false]
+[hide name=tuba]
+[bg_new name=sakuranamiki storage="sakuranamiki" x=5 y=5 scale=4]
+[bg_show name=sakuranamiki wait=false]
+[chara_show name=tuba x=10 y=-2]
+[anim name=sakuranamiki time=10 x=-5 y=5 wait=false]
+[anim name=tuba time=10 x=0 y=-2 wait=false]
 
-
-桜並木[p]
 #僕
 　春になるまでのこの数ヶ月間。[p]
 #僕
@@ -176,6 +183,8 @@ Prrr![r]
 がさがさ[p]
 #？
 ピィピィ……[l]ピィ？[p]
+[anim name=sakuranamiki time=1 x=-5 y=5 wait=false]
+[anim name=tuba time=1 x=0 y=-1]
 #僕
 いた──────！？[p]
 
@@ -193,11 +202,20 @@ Prrr![r]
 #僕
 ……お前……飛べるのか？[p]
 #ヒナ
-……ピイ？[l] ……ピ、[l]ピ、[l]ピイィィィィィィィ！！[p]
-
+……ピイ？[l] ……ピ、[l]
+[anim name=tuba time=0.2 x=0 y=-0.8]
+[anim name=tuba time=0.2 x=0 y=-1]
+ピ、[l]
+[anim name=tuba time=0.2 x=0 y=-0.8]
+[anim name=tuba time=0.2 x=0 y=-1]
+ピイィィィィィィィ！！[p]
+[anim name=tuba time=0.2 x=0 y=-0.5]
+#
 バサッ[p]
 #僕
 おお！[l][r]
+[anim name=tuba time=0.2 x=0 y=-1]
+
 少しも浮いてない！[p]
 #ヒナ
 ピイ……ピッ！[p]
@@ -210,7 +228,11 @@ Prrr![r]
 
 ……現代人らしくネットで調べよ。[p]
 
-
+[hide name=sakuranamiki wait=false]
+[hide name=tuba]
+[wait time=1]
+[chara_show name=tuba wait=false]
+[bg_show name=sakuranamiki]
 
 #僕
 ……へー。[l]ふーん。[l][r]そうしてそうすると、[l]ああ、そうなるからそうするのね。なるほどなるほど。[p]
@@ -231,7 +253,11 @@ Prrr![r]
 #ヒナ
 ピィ……[p]
 
-
+[hide name=sakuranamiki wait=false]
+[hide name=tuba]
+[wait time=1]
+[image_show name=tuba wait=false]
+[bg_show name=sakuranamiki]
 
 
 夕方
@@ -263,24 +289,29 @@ Prrr![r]
 あ、ああ。ごめん。ちょっと考えてたんだ。すぐ終わるよ。[p]
 #ヒナ
 …………ピィ……ピッ！[p]
+[image_mod name=tuba storage="tsubakuro_migi"]
+[anim name=tuba time=1 x=1 y=-1]
 #僕
-ん？どうした？突然手から飛び降りたりして……。[p]
+ん？どうした？突然離れたりして……。[p]
 #ヒナ
 ……ピィピィ[p]
 #僕
 ……もう探さなくていいって言いたいのか？[p]
 #ヒナ
 ピィピィ。[l]……ピッ！[p]
+
+[anim name=tuba time=2.5 x=2 y=-1 wait=false]
 #僕
 走った！？[l]うわ！ちょっ！待てって！[p]
 #僕
 あれ？全然速くない。歩いていても追いつくわ。[p]
+
 [r]
 ヒョイ[p]
 #ヒナ
 ピピピピピピピッ！……ピィ！？[p]
 #僕
-悪いけど持ち上げさせてもらったよ。[r]一人で逃げたってどうにもならないでしょ。[p]
+はぁ……。一人で逃げたってどうにもならないでしょ。[p]
 #ヒナ
 ピィ…………[p]
 #僕
@@ -304,7 +335,10 @@ Prrr![r]
 #僕
 （でもやっぱり見捨てられない。[r]お金は……たぶんどうにかなるよね[p]
 
-
+[hide name=sakuranamiki]
+[image_mod name=tuba storage="tsubakuro_ushiro1"]
+[bg_show name=ap_before wait=false]
+[image_pos name=tuba x=-0.5 y=-1]
 
 家
 #僕
@@ -313,18 +347,34 @@ Prrr![r]
 ピィ！[p]
 #僕
 はいはい。キミのねぐら作りますよー、っと。[p]
+[hide name=ap_before wait=false]
+[hide name=tuba]
 
 テキパキドンドンカチャカチャバコーン[p]
+[bg_new name="ap_after" storage="washitu_after" scale=5 x=2 y=-5]
+[bg_show name=ap_after wait=false]
+[image_show name=tuba]
 #僕
 はい、できた。[p]
 #ヒナ
 ピィピイ！[p]
+[anim name=tuba time=1 x=-0.5 y=0]
+[image_mod name=tuba storage=tsubakuro_migi][l]
+[anim name=tuba time=1 x=1.5 y=0]
+[image_mod name=tuba storage=tsubakuro_ushiro1][l]
+[anim name=tuba time=1 x=1.5 y=2]
+[wait time=1]
+[anim name=tuba time=0.2 x=1.5 y=2.2]
+[anim name=tuba time=0.2 x=1.5 y=2]
+[anim name=tuba time=0.2 x=1.5 y=2.2]
+[anim name=tuba time=0.2 x=1.5 y=2]
 #僕
 本当は巣の端端まで光る匠の技を一つ一つ説明してあげたいところだけどテキストの無駄だからやめておくよ。[p]
 #ヒナ
 ピ、ピイ？[p]
 [r]
 Prrr[p]
+[image_mod name=tuba storage=tsubakuro_hidari]
 #僕
 お、電話だ。[p]
 #ヒナ
@@ -346,7 +396,9 @@ Prrr[p]
 #ヒナ
 ピ、ピイ？[p]
 #僕
-あ、ああ。母さんの声だったけど初っぱなにあんな強烈なボディーブローを打ってくる人なんてきっと母さんじゃないよ。[l]いや、母さんじゃないと僕は信じたい。[p]
+あ、ああ。母さんの声だったけど初っぱなにあんな強烈なボディーブローを打ってくる人なんてきっと母さんじゃないよ。[p]
+#僕
+いや、母さんじゃないと僕は信じたい。[p]
 #ヒナ
 ピ、ピィ……[p]
 [r]
@@ -428,6 +480,8 @@ Prrr[p]
 だいたいキミって何の種類？[r]ツバメにしてはずんぐりしてない？[p]
 #ツバメにしてはずんぐりしている鳥
 ピイ……！[p]
+[anim name=tuba time=0.2 x=1.5 y=2.2]
+[anim name=tuba time=0.2 x=1.5 y=2]
 #僕
 確か……こんな鳥がいたような。[p]
 #僕

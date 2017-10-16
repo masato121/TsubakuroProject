@@ -5,14 +5,14 @@
 
 @button_new name="button_menu" tag="message_button" x=120 y=240 scale=0.3 sort=5 layer=ui storage="menu" 
 
-@button_new name="button_save" tag="message_button" x=200 y=190 scale=1 sort=5 layer=ui storage="save" 
-@button_new name="button_load" tag="message_button" x=200 y=150 scale=1 sort=5 layer=ui storage="load" 
-@button_new name="button_skip" tag="message_button" x=200 y=110 scale=1 sort=5 layer=ui storage="skip" 
-@button_new name="button_auto" tag="message_button" x=200 y=70 scale=1 sort=5 layer=ui storage="auto" 
-@button_new name="button_log"  tag="message_button" x=200 y=30 scale=1 sort=5 layer=ui storage="log" 
+@button_new name="button_save" tag="message_button" x=300 y=190 scale=1 sort=5 layer=ui storage="save" 
+@button_new name="button_load" tag="message_button" x=300 y=150 scale=1 sort=5 layer=ui storage="load" 
+@button_new name="button_skip" tag="message_button" x=300 y=110 scale=1 sort=5 layer=ui storage="skip" 
+@button_new name="button_auto" tag="message_button" x=300 y=70 scale=1 sort=5 layer=ui storage="auto" 
+@button_new name="button_log"  tag="message_button" x=300 y=30 scale=1 sort=5 layer=ui storage="log" 
 
 
-@button_new name="button_title" tag="message_button" x=200 y=-10 scale=1 sort=5 layer=ui storage="title" 
+@button_new name="button_title" tag="message_button" x=300 y=-10 scale=1 sort=5 layer=ui storage="title" 
 ;@button_new name="button_config" tag="message_button" x=200 y=-50 scale=1 sort=5 layer=ui storage="config" 
 
 ;_sp_button_close は特別な意味を持つ名前。close 機能が自動的に付与される
@@ -58,7 +58,7 @@
 
 	[else]
 		[flag exp="f.is_show=0"]
-		[calc exp="tmp.anim_x = 200"]
+		[calc exp="tmp.anim_x = 300"]
 
 	[endif]
 

@@ -3,7 +3,6 @@ using System.Collections;
 
 public class PlayerControlScript : MonoBehaviour {
 
-	float Speed=2;
 	public Vector2 SPEED = new Vector2(0.05f, 0.05f);
 	// Use this for initialization
 	void Start () {
