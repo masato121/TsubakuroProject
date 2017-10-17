@@ -83,30 +83,30 @@
 @text_new name="text_date_{save.name}" anchor="MiddleLeft" fontsize=14 cut=20 val="{save.date}" tag="samune" x=-55 y={tmp.text_date_y}
 @text_new name="text_{save.name}" anchor="MiddleLeft" fontsize=14 cut=20 val="{save.title}" tag="samune" x=-55 y={tmp.text_y}
 
-/*
-[if exp="{save.img}!=''"]
-[image_new name="{save.name}_img" path=true storage="{save.img}" tag="save_button" x=-4 scale=0.25 y={tmp.tm_y} ]
-[else]
-[endif]
-*/
+
+;[if exp="{save.img}!=''"]
+;[image_new name="{save.name}_img" path=true storage="{save.img}" tag="save_button" x=-4 scale=0.25 y={tmp.tm_y} ]
+;[else]
+;[endif]
+
 
 [end_saveloop]
 
 @get_autosave var=auto
 
-[if exp="{auto.name!=''}"]
+[if exp="(auto.name)!='']
 
 
-[calc exp="tmp.image_y={tmp.image_y}-200"]
-[calc exp="tmp.text_y= {tmp.text_y}-200"]
-[calc exp="tmp.text_date_y={tmp.text_date_y}-200"]
+[calc exp="tmp.image_y={tmp.image_y}-100"]
+[calc exp="tmp.text_y= {tmp.text_y}-100"]
+[calc exp="tmp.text_date_y={tmp.text_date_y}-100"]
 
 ;自動セーブ
 
-;@text_new name="text_auto" fontsize=26 anchor="MiddleLeft" cut=20 val="自動セーブ" tag="samune" x=200 y=0.205
-;@button_new storage="load" layer=ui name="{auto.name}" tag="save_button" x=4 y={tmp.image_y} scale=1.5
-;@text_new name="text_date_{auto.name}" anchor="MiddleLeft" fontsize=26 cut=20 val="{auto.date}" tag="samune" x=0.27 y={tmp.text_date_y}
-;@text_new name="text_{auto.name}" anchor="MiddleLeft" fontsize=26 cut=20 val="{auto.title}" tag="samune" x=0.27 y={tmp.text_y}
+@text_new name="text_auto" fontsize=26 anchor="MiddleLeft" cut=20 val="自動セーブ" tag="samune" x=4 y=-100
+@button_new storage="load" layer=ui name="{auto.name}" tag="save_button" x=90 y={tmp.image_y} scale=0.6
+@text_new name="text_date_{auto.name}" anchor="MiddleLeft" fontsize=14 cut=20 val="{auto.date}" tag="samune" x=-55 y={tmp.text_date_y}
+@text_new name="text_{auto.name}" anchor="MiddleLeft" fontsize=14 cut=20 val="{auto.title}" tag="samune" x=-55 y={tmp.text_y}
 
 
 [endif]
