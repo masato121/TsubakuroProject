@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Novel;
+using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour {
     public GameObject para_button;
@@ -59,5 +61,13 @@ public class MainMenuManager : MonoBehaviour {
     public void PushButtonMenuCancel()
     {
         menu_canvas.SetActive(false);
+    }
+    public void PushButtonConfig()
+    {
+        NovelSingleton.StatusManager.callJoker("tall/libs/config", "");
+    }
+    public void PushButtonTitle()
+    {
+        SceneManager.LoadScene("TitleScene");
     }
 }
