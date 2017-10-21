@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Novel;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenuManager : MonoBehaviour {
     public GameObject para_button;
@@ -11,6 +12,12 @@ public class MainMenuManager : MonoBehaviour {
     public GameObject food_canvas;
     public GameObject work_canvas;
     public GameObject menu_canvas;
+    public GameObject food;
+    public GameObject fly;
+    public GameObject know;
+    public GameObject band;
+    public GameObject tips;
+    public GameObject date;
     // Use this for initialization
     void Start () {
 		
@@ -20,6 +27,8 @@ public class MainMenuManager : MonoBehaviour {
 	void Update () {
 		
 	}
+ 
+
     public void PushButtonPara()
     {
         para_button.SetActive(false);
@@ -69,5 +78,23 @@ public class MainMenuManager : MonoBehaviour {
     public void PushButtonTitle()
     {
         SceneManager.LoadScene("TitleScene");
+    }
+    public void PushButtonParaGO()
+    {
+        food.SetActive(false);
+        fly.SetActive(false);
+        know.SetActive(false);
+        band.SetActive(false);
+        tips.SetActive(true);
+        date.SetActive(true);
+    }
+    public void PushButtonParaBack()
+    {
+        food.SetActive(true);
+        fly.SetActive(true);
+        know.SetActive(true);
+        band.SetActive(true);
+        tips.SetActive(false);
+        date.SetActive(false);
     }
 }

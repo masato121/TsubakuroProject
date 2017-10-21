@@ -1,8 +1,10 @@
 @call file=tall/libs/utils
 
 
-
-
+[calc exp ="f.food=100"]
+[calc exp ="f.know=0"]
+[calc exp ="f.fly=0"]
+[calc exp ="f.band=0"]
 
 ;メッセージ表示
 [showmessage]
