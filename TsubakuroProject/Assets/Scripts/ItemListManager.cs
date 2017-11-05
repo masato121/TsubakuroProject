@@ -3,6 +3,7 @@
 using UnityEngine.UI;
 using System.Collections.Generic;
 using System;
+using Novel;
 
 namespace Scene
 {
@@ -33,7 +34,7 @@ namespace Scene
         /// <summary>
         /// ItemNode内オブジェクト
         /// </summary>
-        private Image _itemImage = null;
+        private UnityEngine.UI.Image _itemImage = null;
         private Text _itemName = null;
 
         /// <summary>
@@ -128,7 +129,7 @@ namespace Scene
             DebugDataLoad();
 
             // ItemNode内の各オブジェクトの取得
-            _itemImage = _itemNode.transform.Find("ItemImg").GetComponent<Image>();
+            _itemImage = _itemNode.transform.Find("ItemImg").GetComponent<UnityEngine.UI.Image>();
             _itemName = _itemNode.transform.Find("ItemName").GetComponent<Text>();
 
             // ItemList内の各オブジェクト取得
@@ -220,13 +221,18 @@ namespace Scene
         }
         public void PushButtonUse()
         {
-            Para_text para = FindObjectOfType<Para_text>();
-            if (para.money >= use_money)
+            if (int.Parse(StatusManager.variable.get("f.money")) >= use_money)
             {
-
-                para.money = para.money - use_money;
-                para.Food = para.Food + up_fat;
-                para.know = para.know + up_kno;
+                int rknow = int.Parse(StatusManager.variable.get("f.know")) + up_kno;
+                StatusManager.variable.set("f.know", rknow.ToString());
+                int rfood = int.Parse(StatusManager.variable.get("f.food")) + up_fat;
+                if (rfood > 100)
+                {
+                    rfood = 100;
+                }
+                StatusManager.variable.set("f.food", rfood.ToString());
+                int rmoney = int.Parse(StatusManager.variable.get("f.money")) -use_money;
+                StatusManager.variable.set("f.money", rmoney.ToString());
             }
         }
 

@@ -18,6 +18,12 @@ public class MainMenuManager : MonoBehaviour {
     public GameObject band;
     public GameObject tips;
     public GameObject date;
+    public GameObject plist;
+    public GameObject pcont;
+    public GameObject tlist;
+    public GameObject tcont;
+    public GameObject pbutton;
+    public GameObject tbutton;
     // Use this for initialization
     void Start () {
 		
@@ -97,4 +103,24 @@ public class MainMenuManager : MonoBehaviour {
         tips.SetActive(false);
         date.SetActive(false);
     }
+    public void PushButtonPart()
+    {
+        plist.SetActive(true);
+        pcont.SetActive(true);
+        pbutton.SetActive(true);
+        tlist.SetActive(false);
+        tcont.SetActive(false);
+        tbutton.SetActive(false);
+    }
+    public void PushButtonTrain()
+    {
+        plist.SetActive(false);
+        pcont.SetActive(false);
+        pbutton.SetActive(false);
+        tlist.SetActive(true);
+        tcont.SetActive(true);
+        tbutton.SetActive(true);
+    }
+
+
 }
