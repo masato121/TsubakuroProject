@@ -1,10 +1,13 @@
 @call file=tall/libs/utils
 
 
-[calc exp ="f.food=100"]
+[calc exp ="f.food=30"]
 [calc exp ="f.know=0"]
 [calc exp ="f.fly=0"]
 [calc exp ="f.band=0"]
+[calc exp="f.money=1000"]
+[calc exp="f.date=1"]
+[flag exp="f.tips=つばくろやゲームに関する情報がここに表示されるよ。チェックしておこう！"]
 
 ;メッセージ表示
 [showmessage]
@@ -499,7 +502,6 @@ To be continued......[p]
 
 #システムメッセージ
 オートセーブしました。[p]
-
 
 [scene file="MainMenu"]
 

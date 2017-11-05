@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Novel;
 
 public class TubaMove : MonoBehaviour {
 
@@ -8,11 +9,9 @@ public class TubaMove : MonoBehaviour {
     Para_text para;
 	// Use this for initialization
 	void Start () {
-        Para_text para = FindObjectOfType<Para_text>();
-        gm = GameObject.Find("GameManager");
-        para = gm.GetComponent<Para_text>();
+
         float dir = Random.Range(0, 359);
-        float spd = 0.05f * para.Food;
+        float spd = 0.05f * int.Parse(StatusManager.variable.get("f.food"));
         CharaMove(dir, spd);
 		
 	}
@@ -24,9 +23,8 @@ public class TubaMove : MonoBehaviour {
 	}
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Para_text para2 = FindObjectOfType<Para_text>();
         float dir = Random.Range(0, 359);
-        CharaMove(dir, 0.05f*para2.Food);
+        CharaMove(dir, 0.05f* int.Parse(StatusManager.variable.get("f.food")));
 
     }
     public void CharaMove(float dir,float sp)
