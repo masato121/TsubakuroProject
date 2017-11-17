@@ -104,8 +104,8 @@ namespace Scene
             // ItemMasterデータロード
             _trainListMst.Clear();
 
-            _trainListMst.Add(new TrainListMaster(1, "ラーメン店", "忙しい。"));
-            _trainListMst.Add(new TrainListMaster(2, "鎚起銅器", "難しい。"));
+            _trainListMst.Add(new TrainListMaster(1, "飛翔", "必須。"));
+            _trainListMst.Add(new TrainListMaster(2, "回避", "これまた必須。"));
 
             // UserItemDataロード
             _userTrainDataLst.Clear();
