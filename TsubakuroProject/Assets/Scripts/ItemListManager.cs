@@ -224,6 +224,7 @@ namespace Scene
             if (int.Parse(StatusManager.variable.get("f.money")) >= use_money)
             {
                 int rknow = int.Parse(StatusManager.variable.get("f.know")) + up_kno;
+                Debug.Log(rknow);
                 StatusManager.variable.set("f.know", rknow.ToString());
                 int rfood = int.Parse(StatusManager.variable.get("f.food")) + up_fat;
                 if (rfood > 100)

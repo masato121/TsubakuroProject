@@ -37,7 +37,7 @@ public class Para_text : MonoBehaviour {
         para_band.text="親密度：" + StatusManager.variable.get("f.band");
         para_tips.text = StatusManager.variable.get("f.tips");
         int date = int.Parse(StatusManager.variable.get("f.date"));
-        para_date.text = (((date / 4) + 4)) + "月　第" + (((date - 1) % 4) + 1) + "週";
+        para_date.text = ((((date-1) /4) + 4)) + "月　第" + (((date - 1) % 4) + 1) + "週";
         para_money.text ="所持金"+ StatusManager.variable.get("f.money") + "円";
 
 	}

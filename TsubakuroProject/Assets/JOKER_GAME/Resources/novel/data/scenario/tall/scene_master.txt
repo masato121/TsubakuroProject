@@ -1,0 +1,38 @@
+
+
+
+
+*master
+
+[random var="f.num" num=5]
+
+[if exp="f.num=0"]
+[flag exp="f.tips=つばくろちゃんは燕市の戸隠神社のマスコットキャラクター。かわいいよ！"]
+
+[if exp="f.num=1"]
+[flag exp="f.tips=満腹度によってつばくろの動きの速さが変わるよ！"]
+
+[if exp="f.num=2"]
+[flag exp="f.tips=ゲーム中の場所は全部燕市のどこかがモデルになってるよ！"]
+
+[if exp="f.num=3"]
+[flag exp="f.tips=燕市の洋食器は世界的に有名で、ノーベル賞受賞式の晩餐会にも使われたことがあるよ！"]
+
+[if exp="f.num=4"]
+[flag exp="f.tips=このゲームは燕市の高校生が知識ゼロの状態から作っているから多少の粗は勘弁してね！"]
+
+
+
+[end if]
+
+[if exp="f.date=10"]
+[jump file="scene2"]
+
+[else if exp="f.date=20"]
+
+
+[else]
+[scene file="MainMenu"]
+
+
+[end if]
